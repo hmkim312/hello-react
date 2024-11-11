@@ -2,6 +2,77 @@ import { Fragment } from "react";
 import { Component } from "react";
 import logo from './logo.svg';
 import './App.css';
+import MyComponent from "./MyComponent";
+import Counter from "./Counter";
+import Say from "./Say"
+
+class App extends Component {
+    render() {
+        const name = "react";
+        return (
+            <>
+                <div className="react">{name}</div>
+                <MyComponent name="리액트" favoriteNumber={1}>
+                    리액트
+                </MyComponent>
+                <Counter />
+                <Say />
+            </>
+        );
+    }
+}
+
+// class App extends Component {
+//     render() {
+//         const name = "react";
+//         return (
+//             <>
+//                 <div className="react">{name}</div>
+//                 <MyComponent name="리액트" favoriteNumber={1}>
+//                     리액트
+//                 </MyComponent>
+//                 <Counter />
+//             </>
+//         );
+//     }
+// }
+
+// class App extends Component {
+//     render() {
+//         const name = "React";
+//         return (
+//            <>
+//             <div className="React">{name}</div>
+//             <MyComponent name="리액트" favoriteNumber={1}>리액트</MyComponent>
+//            </>
+//         );
+//     }
+// }
+
+// class App extends Component {
+//     render() {
+//         const name = "React";
+//         return (
+//            <>
+//             <div className="React">{name}</div>
+//             <MyComponent name={3}>리액트</MyComponent>
+//            </>
+//         );
+//     }
+// }
+
+// class App extends Component {
+//     render() {
+//         const name = "React";
+//         return (
+//             <>
+//                 <div className="React">{name}</div>
+//                 <MyComponent name="첫 번째"/>
+//                 <MyComponent />
+//             </>
+//         );
+//     }
+// }
 
 // function App() {
 //   return (
@@ -99,16 +170,16 @@ import './App.css';
 //   );
 // }
 
-class App extends Component {
-  render() {
-    const name = "리액트";
-    return (
-      <>
-        <div className="react">{name}</div>
-        <input />
-      </>
-    )
-  }
-}
+// class App extends Component {
+//   render() {
+//     const name = "리액트";
+//     return (
+//       <>
+//         <div className="react">{name}</div>
+//         <input />
+//       </>
+//     )
+//   }
+// }
 
 export default App;
