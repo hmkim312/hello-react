@@ -1,26 +1,81 @@
-import { Fragment } from "react";
 import { Component } from "react";
-import logo from './logo.svg';
-import './App.css';
-import MyComponent from "./MyComponent";
-import Counter from "./Counter";
-import Say from "./Say"
+import { Route, Routes, Link } from "react-router-dom";
+import Home from "./home";
+import Vote from "./Vote";
+import Like from "./Like";
 
 class App extends Component {
     render() {
-        const name = "react";
         return (
-            <>
-                <div className="react">{name}</div>
-                <MyComponent name="리액트" favoriteNumber={1}>
-                    리액트
-                </MyComponent>
-                <Counter />
-                <Say />
-            </>
-        );
+            <div>
+                <ul>
+                    <li><Link to="/">홈</Link></li>
+                    <li><Link to="/vote">투표</Link></li>
+                </ul>
+                <hr />
+                <Routes>
+                    <Route path="/" element={<Home/>} />
+                    {["/vote", "/tour"].map(path=> (
+                        <Route key={path} path={path} element={<Vote/>} />
+                    ))}
+                    <Route path="/like/:item_id" element={<Like/>} />
+                    <Route path="*" element={<div>페이지가 없습니다.</div>} />
+                </Routes>
+            </div>
+        )
     }
 }
+
+// class App extends Component {
+//     render() {
+//         return (
+//             <Routes>
+//                 <Route path="/" element={<Home/>} />
+//                 <Route path="/vote" element={<Vote/>} />
+//                 <Route path="/like" element={<Like/>} />
+//             </Routes>
+//         )
+//     }
+// }
+
+// class App extends Component {
+//     render() {
+//         const name = "react";
+//         return <Poll />;
+//     }
+// }
+// class App extends Component {
+//     render() {
+//         const name = "react";
+//         return (
+//             <>
+//                 <div className="react">{name}</div>
+//                 <MyComponent name="리액트" favoriteNumber={1}>
+//                     리액트
+//                 </MyComponent>
+//                 <Counter />
+//                 <Say />
+//                 <Loader />
+//             </>
+//         );
+//     }
+// }
+
+// class App extends Component {
+//     render() {
+//         const name = "react";
+//         return (
+//             <>
+//                 <div className="react">{name}</div>
+//                 <MyComponent name="리액트" favoriteNumber={1}>
+//                     리액트
+//                 </MyComponent>
+//                 <Counter />
+//                 <Say />
+//             </>
+//         );
+//     }
+// }
 
 // class App extends Component {
 //     render() {
